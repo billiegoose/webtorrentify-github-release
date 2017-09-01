@@ -5,7 +5,7 @@ const temp = require('temp').track()
 module.exports = function (user, repo, version, torrentName) {
   torrentName = torrentName || user + '-' + repo + '-' + version + '.torrent'
   var filterRelease = function (release) {
-    return (release.name === version)
+    return (release.tag_name === version)
   }
   var filterAsset = function (asset) {
     return (asset.name !== torrentName)

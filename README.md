@@ -33,22 +33,57 @@ npm install webtorrentify-github-release --global
 ## Usage
 
 ```sh
-PUTASSET_TOKEN=$GITHUB_TOKEN webtorrentify-github-release [owner] [repo] [version]
+webtorrentify-github-release [owner] [repo] [version] [--upload]
 ```
 
 If you don't specify `owner`, `repo`, or `version` it will try to obtain them from `package.json` in the current working directory.
-If you specify a `PUTASSET_TOKEN` then it will upload the torrent file to Github. Otherwise it will just be saved locally.
 
 Otherwise
 
 - `owner` is the Github username or name.
 - `repo` is the repository name.
 - `version` is the release to use. It must exactly match the git tag.
-- `PUTASSET_TOKEN` is the Github OAuth token that [putasset](https://www.npmjs.com/package/putasset) uses to upload the `.torrent` file to your release.
+
+If `--upload` is used, it will create a Github OAuth token using [`ghauth`](https://npmjs.com/package/ghauth) or reuse one previously saved by [`gh-release`](https://npmjs.com/package/gh-release), and use [putasset](https://www.npmjs.com/package/putasset) to upload the `.torrent` file to your release.
 
 The Github Release files are downloaded to a temporary directory and deleted afterwards.
 The torrent file is saved in the current working directory and named `${repo}-${version}.torrent`.
 If there was a problem it will exit with a non-zero exit code.
+
+## Examples
+
+
+```sh
+> cd mymodule
+> webtorrentify-github-release
+Downloading wmhilton/mymodule@v0.0.1...
+RELEASES                 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 0.0s
+Skipping upload to Github because the --upload flag wasn\'t used.
+> ls
+mymodule-v0.0.2.torrent
+```
+
+Publishing torrent to Github the first time:
+
+```
+> webtorrentify-github-release --upload
+Downloading wmhilton/mymodule@v0.0.2...
+RELEASES                 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 0.0s
+Your GitHub username: wmhilton
+Your GitHub password: ✔✔✔✔✔✔✔✔✔
+
+Your GitHub OTP/2FA Code (optional): ******
+Uploaded .torrent to Github.
+```
+
+Subsequent usage:
+
+```sh
+> webtorrentify-github-release --upload
+Downloading wmhilton/mymodule@v0.0.3...
+RELEASES                 ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ 0.0s
+Uploaded .torrent to Github.
+```
 
 ## Automated usage
 

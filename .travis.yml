@@ -7,4 +7,4 @@ deploy:
     skip_cleanup: true
     tags: true
     branch: master
-    repo: /webtorrentify-github-release
+    repo: wmhilton/webtorrentify-github-release

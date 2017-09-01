@@ -1,6 +1,5 @@
 const downloadRelease = require('download-github-release')
 const createTorrent = require('create-torrent')
-const fs = require('fs')
 const temp = require('temp').track()
 
 module.exports = function (user, repo, version, torrentName) {
@@ -11,7 +10,7 @@ module.exports = function (user, repo, version, torrentName) {
   var filterAsset = function (asset) {
     return (asset.name !== torrentName)
   }
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     temp.mkdir(torrentName, function (err, dir) {
       if (err) return reject(err)
       downloadRelease(user, repo, dir, filterRelease, filterAsset, false)

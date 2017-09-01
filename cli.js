@@ -18,7 +18,8 @@ minimisted(function (args) {
         repo: _[1],
         tag: _[2],
         filename: torrentName
-      , function (err) {
+      },
+      function (err) {
         if (err) return exitWithError(err)
         console.log('Uploaded .torrent to Github.')
       })

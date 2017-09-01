@@ -1,6 +1,6 @@
 {
   "name": "webtorrentify-github-release",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Generate a .torrent file corresponding to a particular Github Release",
   "main": "index.js",
   "preferGlobal": true,

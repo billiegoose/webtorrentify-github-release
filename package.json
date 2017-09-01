@@ -1,0 +1,21 @@
+{
+  "name": "webtorrentify-github-release",
+  "version": "0.0.0",
+  "description": "Generate a .torrent file corresponding to a particular Github Release",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": "cli.js",
+  "scripts": {
+  },
+  "keywords": [],
+  "author": "William Hilton <wmhilton@gmail.com>",
+  "license": "Unlicense",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com//webtorrentify-github-release"
+  },
+  "dependencies": {
+    "download-github-release": "git+https://github.com/wmhilton-contrib/download-github-release.git",
+    "minimisted": "^2.0.0"
+  }
+}

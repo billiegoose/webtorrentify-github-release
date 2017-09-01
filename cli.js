@@ -25,7 +25,7 @@ minimisted(function (args) {
     repo = _[1]
     version = _[2]
   } else {
-    return console.log('Usage: webtorrentify-github-release user repo version')
+    return console.log('Usage: PUTASSET_TOKEN=$GITHUB_TOKEN webtorrentify-github-release [user] [repo] [version]')
   }
   var torrentName = repo + '-' + version + '.torrent'
   

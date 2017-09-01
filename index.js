@@ -3,7 +3,7 @@ const createTorrent = require('create-torrent')
 const temp = require('temp').track()
 
 module.exports = function (user, repo, version, torrentName) {
-  torrentName = torrentName || user + '-' + repo + '-' + version + '.torrent'
+  torrentName = torrentName || repo + '-' + version + '.torrent'
   var filterRelease = function (release) {
     return (release.tag_name === version)
   }

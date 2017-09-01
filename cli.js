@@ -8,9 +8,9 @@ var webtorrentifyGithubRelease = require('./index')
 minimisted(function (args) {
   var _ = args._
   var owner, repo, version, torrentName
-
+  
   // Read details from package.json
-  if (_.length === 0 && fs.exists('package.json') {
+  if (_.length === 0 && fs.existsSync('package.json')) {
     try {
       var pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'))
     } catch (err) {
@@ -20,7 +20,7 @@ minimisted(function (args) {
     owner = gh.user
     repo = gh.repo
     version = 'v' + pkg.version
-  } else if ((_.length === 3) {
+  } else if ((_.length === 3)) {
     owner = _[0]
     repo = _[1]
     version = _[2]

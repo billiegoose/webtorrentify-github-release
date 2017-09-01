@@ -3,12 +3,12 @@ Generate a .torrent file corresponding to a particular Github Release
 
 ## Why?
 
-Distributing your application over WebTorrent/BitTorrent is cool! í¸
+Distributing your application over WebTorrent/BitTorrent is cool! ğŸ˜
 
 It can improve reliability and save money:
 
 - Your application can still be downloaded if Github gets blocked, goes down, or kicks you off\*
-- You save Github í²² by placing less demand on Github's AWS storage servers! â¤ï¸
+- You save Github ğŸ’² by placing less demand on Github's AWS storage servers! â¤ï¸
 
 \* as long as the torrent is being seeded
 

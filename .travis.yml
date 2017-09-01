@@ -1,8 +1,16 @@
 language: node_js
 node_js: 6
 deploy:
-  provider: npm
+- provider: npm
   email: wmhilton@gmail.com
+  api_key: "$NPM_PUBLISH_TOKEN"
+  on:
+    skip_cleanup: true
+    tags: true
+    branch: master
+    repo: wmhilton/webtorrentify-github-release
+- provider: releases
+  api_key: "$PUTASSET_TOKEN"
   on:
     skip_cleanup: true
     tags: true

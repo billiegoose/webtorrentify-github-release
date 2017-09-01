@@ -18,6 +18,7 @@
   "dependencies": {
     "create-torrent": "^3.29.2",
     "download-github-release": "git+https://github.com/wmhilton-contrib/download-github-release.git#5fa58236b9d494249abc717543f5708ebcfc88ac",
+    "github-url-to-object": "^4.0.2",
     "minimisted": "^2.0.0",
     "putasset": "^2.1.6",
     "temp": "^0.8.3"

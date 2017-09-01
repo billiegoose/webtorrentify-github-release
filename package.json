@@ -11,7 +11,7 @@
   "license": "Unlicense",
   "repository": {
     "type": "git",
-    "url": "https://github.com//webtorrentify-github-release"
+    "url": "https://github.com/wmhilton/webtorrentify-github-release"
   },
   "dependencies": {
     "create-torrent": "^3.29.2",

@@ -13,7 +13,7 @@ module.exports = function (user, repo, version, torrentName) {
   return new Promise(function (resolve, reject) {
     temp.mkdir(torrentName, function (err, dir) {
       if (err) return reject(err)
-      downloadRelease(user, repo, dir, filterRelease, filterAsset, false)
+      downloadRelease(user, repo, dir, filterRelease, filterAsset, true)
       .then(function () {
         createTorrent(dir, {name: torrentName}, function (err, torrent) {
           if (err) return reject(err)

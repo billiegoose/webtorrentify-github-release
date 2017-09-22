@@ -6,15 +6,15 @@ deploy:
 - provider: npm
   email: wmhilton@gmail.com
   api_key: "$NPM_PUBLISH_TOKEN"
+  skip_cleanup: true
   on:
-    skip_cleanup: true
     tags: true
     branch: master
     repo: wmhilton/webtorrentify-github-release
 - provider: releases
   api_key: "$PUTASSET_TOKEN"
+  skip_cleanup: true
   on:
-    skip_cleanup: true
     tags: true
     branch: master
     repo: wmhilton/webtorrentify-github-release
